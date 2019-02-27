@@ -611,6 +611,23 @@
      "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-stoptimer/stoptimer.js"
     }
    }
+  },
+  "node-red-contrib-hostip": {
+   "name": "node-red-contrib-hostip",
+   "version": "0.0.3",
+   "local": true,
+   "nodes": {
+    "node-red-hostip": {
+     "name": "node-red-hostip",
+     "types": [
+      "hostip"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hostip",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-hostip/hostip/hostip.js"
+    }
+   }
   }
  },
  "_credentialSecret": "0eb50f12d8dadad2c40816b24e182cea7552188cff28bf360c7e8fd5ade4e522",
