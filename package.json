@@ -10,6 +10,7 @@
     "mongodb": "2.2.36",
     "mqtt": "2.18.8",
     "node-red": "0.18.7",
+    "node-red-contrib-file-upload": "0.0.5",
     "node-red-contrib-fs": "1.0.1",
     "node-red-contrib-ftp-sftp": "1.8.8",
     "node-red-contrib-hostip": "0.0.3",
