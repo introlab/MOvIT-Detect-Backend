@@ -628,6 +628,23 @@
      "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-hostip/hostip/hostip.js"
     }
    }
+  },
+  "node-red-contrib-file-upload": {
+   "name": "node-red-contrib-file-upload",
+   "version": "0.0.5",
+   "local": true,
+   "nodes": {
+    "file-upload": {
+     "name": "file-upload",
+     "types": [
+      "file-upload"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-file-upload",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-file-upload/16-file-upload.js"
+    }
+   }
   }
  },
  "_credentialSecret": "0eb50f12d8dadad2c40816b24e182cea7552188cff28bf360c7e8fd5ade4e522",
@@ -637,7 +654,7 @@
     "view": {
      "view-grid-size": "20",
      "view-node-status": true,
-     "view-show-tips": true,
+     "view-show-tips": false,
      "view-snap-grid": true,
      "view-show-grid": true
     }
