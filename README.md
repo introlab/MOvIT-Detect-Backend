@@ -1,12 +1,12 @@
 # MOvIT-Detect-Backend
 
-MOvIT-Detect-Backend est comme son nom l'indique, le backend du système MOvIT+ destiné a fonctionner sur un raspberry pi zero w. Le backend ce sépare un multiple parti soit:
+MOvIT-Detect-Backend est comme son nom l'indique, le backend du système MOvIT+ destiné a fonctionner sur un Raspberry Pi Zero W. Le backend ce sépare en différentes parties soit:
 
   - Serveur Node-Red-Pi sur le port 1880
   - Serveur MongoDB sur le port 27017
 
 # Installation
-Il faut commencer par installer la version nodeJS `9.10.0` ainsi que la vesrsion NPM `5.6.0` si ce n'est pas déjà fait
+Il faut commencer par installer la version nodeJS `9.10.0` ainsi que la version NPM `5.6.0` si ce n'est pas déjà fait
 ```bash
 curl -o node-v9.10.0-linux-armv6l.tar.gz https://nodejs.org/dist/v9.10.0/node-v9.10.0-linux-armv6l.tar.gz
 tar -xzf node-v9.10.0-linux-armv6l.tar.gz
@@ -28,7 +28,7 @@ Il faudra entrer le mot de passe lorsque demandé, ensuite on doit modifier le f
 ```bash
 sudo nano /etc/mosquitto/mosquitto.conf
 ```
-Il faut ajouter ces lignes aux fichier mosquitto.conf
+Il faut ajouter ces lignes aux fichiers mosquitto.conf
 ```bash
 password_file /etc/mosquitto/passwd
 allow_anonymous false
@@ -49,22 +49,26 @@ sudo npm install
 node initDatabase.js
 ```
 
-Le serveur est finalement installé, pour le démarrer il suffit d'executé la commande dans le dossier racine du projet
+Le serveur est finalement installé, pour le démarrer il suffit d'exécuter la commande dans le dossier racine du projet:
 
 ```bash
 cd ~/MOvIT-Detect-Backend
 node-red-pi --userDir $(pwd)
 ```
+Il est possible de changer la commande `$(pwd)` par l'emplacement du fichier MovIt.json
 
-Le serveur node-red est alors connecté a l'addresse http://<Adresse ip>:1880
+Le serveur node-red est alors connecté a l'adresse http://192.168.10.1:1880 si l'on utilise le point d'accès créer par le Raspberry Pi Zero W, autrement il est accessible via l'adresse DHCP assignée par le routeur.
+
+# Différentes URL
+Il existe différentes URL pratiques pour déverminer le système, et s'assurer que tout fonctionne comme prévu.
+| URL | Utilité |
+| ------------- |-------------|
+| /log      | Cette URL permet de voir les différentes actions effectuées par le système, il est possible de voir les tentatives d'envoi, et autres éléments importants relatifs au système
+| /debug      | Affiche via websocket les différents états de chacune des machines à états finis de MOvIT-Detect, les données brutes et traitées des capteurs y sont présentes également.|
+
+# Modification du système
+Pour modifier le système, il suffit d'aller a l'adresse http://192.168.10.1:1880 si l'on utilise le point d'accès créer par le Raspberry Pi Zero W, le code du backend devrais alors s'afficher sous forme de bloc. Chacun de ces blocs représente une partie du code. Les onglets sont séparés en plusieurs parties distinctes, ce qui facilite la compréhension.
 
 
 # Limitation MongoDB
-Le serveur MongoDB est limité a un maximum de 2GB de données car le serveur fonctionne en 32-bit, cette limitation est imposé par MongoDB et ne peut être corrigé.
-
-# License
-TODO
-----
-
-
-
+Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit, cette limitation est imposée par MongoDB et ne peut être corrigée.
